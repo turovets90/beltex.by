@@ -1,1 +1,0 @@
-# beltex.by
