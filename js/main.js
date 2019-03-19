@@ -72,6 +72,10 @@ $(document).ready(function(){
     $(".phone").mask("+375 (99) 999-99-99");
 
 
+    $('.main_menu .arrow').click(function(){
+        $(this).toggleClass('rotate');
+        $(this).next().slideToggle();
+    });
 
 });
 
