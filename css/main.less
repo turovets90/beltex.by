@@ -585,6 +585,8 @@ img, video{
     display: none;
     z-index: 999;
     background: #fff;
+   border-bottom: 1px solid rgba(17, 35, 66, 0.24);
+
   }
     .search_block{
       @media (min-width:768px){
@@ -1283,7 +1285,7 @@ img, video{
               height: 10px;
               background: #F2F3F5;
               right: 0;
-              left: initial;
+              left: inherit;
               top: -10px;
             }
           }
@@ -1473,6 +1475,38 @@ blockquote{
   }
 }
 
+figure{
+  text-align: center;
+  a[data-fancybox]{
+    .box-shadow(0px 4px 16px rgba(17, 35, 66, 0.08));
+    display: inline-block;
+    position: relative;
+    &:hover{
+      &:before, &:after{
+        opacity: 1;
+      }
+    }
+    &:before{
+      .b_a();
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: linear-gradient(0deg, rgba(15, 84, 180, 0.7), rgba(15, 84, 180, 0.7));
+      .transition(@transition_default);
+      opacity: 0;
+    }
+    &:after{
+      .b_a();
+      width: 40px;
+      height: 40px;
+      .m_a();
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='40' height='40' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M20 0v40M40 20H0' stroke='%23fff' stroke-width='2'/%3e%3c/svg%3e");
+      .transition(@transition_default);
+      opacity: 0;
+    }
+  }
+}
 
 .pr_list.work{
   .pr_item{
@@ -2082,4 +2116,54 @@ a{
       }
     }
   }
+}
+
+
+
+.gallery{
+  .item{
+    margin-bottom: 30px;
+    @media (max-width:767px){
+      margin-bottom: 15px;
+    }
+  }
+}
+
+
+
+.searching_results{
+  .item{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #F2F3F5;
+    .img_thumbnail_link{
+      display: inline-block;
+      width: 100%;
+    }
+    .img_thumbnail{
+      display: inline-block;
+      width: 100%;
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  .news_title{
+    color: #343A40;
+    font-family: @Montserrat-bold;
+    font-size: 18px;
+  }
+}
+
+.page-item.active .page-link{
+background: #125FCA;
+  border-color: #125FCA;
+}
+.page-link{
+  color: #125FCA;
+  border: 1px solid  #F2F3F5;
+}
+.pagination{
+    margin-top: 20px;
 }
