@@ -25,43 +25,67 @@ $(document).ready(function(){
     });
 
 
-
-    var arrow_prev=$('.slick_custom.slick_prev');
-    var arrow_next=$('.slick_custom.slick_next');
-    var slick_slider=$('.slick_slider');
-    var slick_slider_item=$('.slick_slider .slider_item');
-    $(slick_slider).each(function(){
-        if($(slick_slider_item).length >3){
-            $(slick_slider).slick({
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                arrows: false,
-                dots:false,
-                responsive: [
-                    {
-                        breakpoint: 1200,
-                        settings: {
-                            slidesToShow: 2,
-                        }
-                    },
-                    {
-                        breakpoint: 680,
-                        settings: {
-                            slidesToShow: 1,
-                        }
+    if($(".our_specialists .slider_item").length >3){
+        $('.our_specialists').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: false,
+            dots:false,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 2,
                     }
+                },
+                {
+                    breakpoint: 680,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
 
-                ]
-            });
-        }
-        $(arrow_prev).click(function(){
-            $(slick_slider).slick('slickPrev');
+            ]
         });
+    }
+    $('.specialists_prev').click(function(){
+        $('.our_specialists').slick('slickPrev');
+    });
 
-        $(arrow_next).click(function(){
-            $(slick_slider).slick('slickNext');
+    $('.specialists_next').click(function(){
+        $('.our_specialists').slick('slickNext');
+    });
+
+
+    if($(".reviews_slider .slider_item").length >3){
+        $('.reviews_slider').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: false,
+            dots:false,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 680,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+
+            ]
         });
+    }
+    $('.reviews_prev').click(function(){
+        $('.reviews_slider').slick('slickPrev');
+    });
 
+    $('.reviews_next').click(function(){
+        $('.reviews_slider').slick('slickNext');
     });
 
 
